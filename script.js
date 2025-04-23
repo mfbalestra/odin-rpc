@@ -1,9 +1,9 @@
 
 function getComputerChoice() {
-    const choicesAmount = 3;
+    const CHOICES_AMOUNT = 3;
     let choiceInt;
     
-    choiceInt = Math.floor(Math.random() * choicesAmount);
+    choiceInt = Math.floor(Math.random() * CHOICES_AMOUNT);
     
     switch (choiceInt) {
         case 0:
