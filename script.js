@@ -2,29 +2,12 @@ let humanScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
-    const CHOICES_AMOUNT = 3;
+    const CHOICES = ['rock', 'paper', 'scissors']
     let choiceInt;
     
-    choiceInt = Math.floor(Math.random() * CHOICES_AMOUNT);
+    choiceInt = Math.floor(Math.random() * CHOICES.length);
     
-    switch (choiceInt) {
-        case 0:
-            return 'rock';
-        case 1:
-            return 'paper';
-        case 2:
-            return 'scissors';
-        default:
-            break;
-    }
-}
-                
-function getHumanChoice() {
-    let humanChoice;
-    
-    humanChoice = prompt('Please enter your choice: rock, paper, or scissors').toLowerCase();
-    
-    return humanChoice;
+    return CHOICES[choiceInt];
 }
 
 function playRound(humanChoice, computerChoice) {
@@ -51,6 +34,9 @@ function playRound(humanChoice, computerChoice) {
 
 // console.log(playGame());
 
+const score = document.querySelector('.score');
+const resultBoard = document.querySelector('.round-result');
+
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -58,9 +44,13 @@ buttons.forEach((button) => {
         const computerSelection = getComputerChoice();
         const roundResult = playRound(humanSelection, computerSelection);
 
-        console.log(`Player chose ${humanSelection}`);
-        console.log(`Computer chose ${computerSelection}`);
-        console.log(roundResult);
-        console.log(`Current score: Player ${humanScore} - Computer ${computerScore}`);
+        score.textContent = 'Player ' + humanScore + ' - Computer ' + computerScore;
+        resultBoard.textContent = roundResult;
+
+        if (humanScore === 5 || computerScore === 5) {
+            buttons.forEach((button) => {
+                button.style.display = 'none';
+            })
+        }
     });
 });

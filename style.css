@@ -1,13 +1,68 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: black;
-    color: white;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F8F8F8; /* Fondo claro */
+    color: #333333; /* Texto oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.title {
+.container {
+    background-color: #FFFFFF;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-top: 20px;
-    font-size: 3em;
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    color: #1A1A1A;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.score {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #627C8B;
+}
+
+.round-result {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 30px;
+    min-height: 1.8em;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.choice-button {
+    background-color: #E0E0E0;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    color: #333333;
+}
+
+.choice-button:hover {
+    background-color: #D5D5D5;
+    transform: translateY(-2px);
+}
+
+.choice-button:active {
+    background-color: #C0C0C0;
+    transform: translateY(0);
 }
